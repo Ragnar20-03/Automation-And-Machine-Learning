@@ -34,3 +34,8 @@ def Divisible(No1 , No2):
 def Pattern(No):
     for iCnt in range (0 , No , 1):
         print("*\t",end ="")
+
+def DisplayEven(No):
+    for iCnt in range(0 , No*2 , 1):
+        if ( iCnt % 2 == 0 ):
+            print(iCnt)
