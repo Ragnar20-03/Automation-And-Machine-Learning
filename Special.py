@@ -1,11 +1,3 @@
-#  It Displays the name of current Module
-# _\_\_\_\_\_\_|||||||_/_/_/_/_/_/_ #
-print(__name__);
+# It displays the name of current module
 
-
-# Module is a .py File Which Comtanis set of Related functions in it;
-
-# Modules is like 
-    #Packeges in java
-    #Namespace in C++
-    #Header File or Library in C / c++
+print(__name__)

@@ -1,18 +1,16 @@
-
-def Addition(No1 , No2 ):
-    Result = 0 
-    Result = No1 + No2 
+def Addition(No1, No2):
+    Result = 0
+    Result = No1 + No2
     return Result
 
+def main():
+    Value1 = int(input("Enter First Number"))
+    Value2 = int(input("Enter Second Number"))
 
-def main():    #Starter 
-    value1 = int(input("Enter First Number \n"))
-    value2 = int(input ("Enter  Second Number \n"))
-    
-    Answer  = 0 ; 
-    Answer = Addition(value1 , value2);
-    
-    print("Addition is : " , Answer);
+    Answer = 0
+    Answer = Addition(Value1, Value2)
 
-if __name__ == "__main__":
+    print("Addition is : ",Answer)
+
+if __name__ == "__main__":      # starter
     main()

@@ -1,17 +1,15 @@
-
-def Addition(No1 , No2 ):
-    Result = 0 
-    Result =  No1 + No2 
+def Addition(No1, No2):
+    Result = 0
+    Result = No1 + No2
     return Result
 
-
 def main():
-    value1 = int(input("Enter First Number \n"))
-    value2 = int(input ("Enter  Second Number \n"))
-    
-    Answer  = 0 ; 
-    Answer = Addition(value1 , value2)
-    
-    print("Addition is : " , Answer)
+    Value1 = int(input("Enter First Number"))
+    Value2 = int(input("Enter Second Number"))
+
+    Answer = 0
+    Answer = Addition(Value1, Value2)
+
+    print("Addition is : ",Answer)
 
 main()
