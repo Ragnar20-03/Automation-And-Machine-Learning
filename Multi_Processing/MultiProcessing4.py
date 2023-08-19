@@ -17,8 +17,8 @@ def Task2 (value) :
 
 
 def main():
-    No1 = 5 ;
-    No2 = 8 ;
+    No1 = 500 ;
+    No2 = 800 ;
     print("Number of Cores are : " , multiprocessing.cpu_count())
     print("Pid is : " , os.getpid())
     p1 = multiprocessing.Process(target=Task1 , args=(No1,))
