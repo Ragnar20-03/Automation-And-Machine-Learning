@@ -1,68 +1,77 @@
 
 
-class HDFC :
-    ROI = 9.5   #Class Variable
+class HDFC:
+    ROI = 9.5       # Class variable
 
-    def __init__(self ,Name  , Amount):  #Constructor
-        self.Balence = Amount     #Instance Variable
-        self.AccountHolder = Name     #Instance Variable
-        print("Welcome " , self.AccountHolder)
-        print("Account gets succesfully created with initial Balence : " , self.Balence)
-
-    def DisplayBalence(self):  #Instance Methods
-        print("Hello " , self.AccountHolder)
+    def __init__(self,Name,Amount):  # Constructor
+        self.AccountHolder = Name   # Instance Variable
+        self.Balance = Amount       # Instance Variable
+        print("Welcome ",self.AccountHolder)
+        print("Your Account gets succesfully created with initial balance : ",self.Balance)
         print()
-        print("Your account balence for ", self.AccountHolder ,"  is : " , self.Balence)
+
+    def DisplayBalance(self):       # Instance methos
+        print("Hello ",self.AccountHolder)
+        print("Your account balance is : ",self.Balance)
+        print()
 
     @classmethod
-    def DisplayBankInfo(cls):   #Class Method
-        print("Welcome to HDFC bank portal : ")
-        print("Our bank is private limited Bank : ")
-        
-
-
-    def Withdraw (self , Amount):   
-        print("Hello " , self.AccountHolder)
+    def DisplayBankInfo(cls):       # Class method
+        print("Welcome to HDFC bank portal")
+        print("Our bank is PVT LTD bank")
+        print("We provide the Rate Of Intrest on saving account is : ",cls.ROI)
         print()
-        if (self.Balence < Amount):
-            print("There is No Insuffecient Balence ")
+        
+    @staticmethod
+    def DisplayKYCInfo():
+        print("According to the rules of RBI you should provide below documents for KYC")
+        print("Your Aadhar card")
+        print("Your PAN card")
+        print("Your Passport size photo")
+        print()
+    def Withdraw(self,Amount):      # Instance method
+        if self.Balance < Amount:
+            print("There is no sufficient balance")
+        else:
+            self.Balance = self.Balance-Amount
+            print("Amount withdawal succesfully...")
+        print()
 
-        else :
-            self.Balence = self.Balence - Amount
-            print("Your Current Balence is : " , self.Balence)
-            print("Amount withdrwal successfully ...")
-
-    def Deposit(self , Amount):   #Instance Method
-        self.Balence = self.Balence + Amount
-        print("Your Current Balence is : " , self.Balence)
-        print("Amount Deposit successfully ...")
-
-
-
+    def Deposit(self,Amount):       # Instance method
+        self.Balance = self.Balance + Amount
+        print("Amount deposited succesfully...")
+        print()
 
 def main():
-    print()
-    print("Rate of interest is : " , HDFC.ROI)
+    print("ROI of HDFC bank is : ",HDFC.ROI)
     print()
 
     HDFC.DisplayBankInfo()
+
+    HDFC.DisplayKYCInfo()
     print()
-
-    print("Creating new Account : ")
-    obj1 = HDFC ("Amit" , 5000)   # __init__(100 , "Amit" ,5000)
-
-    print()
-
-    print("Creating new Account : ")
-    obj2 = HDFC ("Sagar" , 3000)   # __init__(200 , "Sagar " , 3000)
     
-    print()
+    print("Createing new account ...")
+    Amit = HDFC("Amit",5000)   # __init__(100,"Amit",5000)
 
-    print("Performing operation on obj1")
-    obj1.Deposit(10)
     print()
+    print("Createing new account ...")
+    Sagar = HDFC("Sagar",3000)   # __init__(200,"Sagar",3000)
 
-    obj1.Withdraw(1000)
+    print("Performing operations on Amit's Account")
+    Amit.Deposit(2000)
+    Amit.DisplayBalance()
+
+    Amit.Withdraw(1000)
+    Amit.DisplayBalance()
+
+    print()
+    print("Performing operations on Sagar's Account")
+    Sagar.Deposit(4000)
+    Sagar.DisplayBalance()
+
+    Sagar.Withdraw(500)
+    Sagar.DisplayBalance()
 
 if __name__ == "__main__":
     main()
