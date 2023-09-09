@@ -11,8 +11,8 @@ def main():
     Ans = 0 
     try:
         Ans = no1 / no2
-    except ZeroDivisionError as zobj :
-        print(zobj)
+    except Exception as eobj :
+        print(eobj)
         print("Divide by zero is Not Allowed")
         return
     

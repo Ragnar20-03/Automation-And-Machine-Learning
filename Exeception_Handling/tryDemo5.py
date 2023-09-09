@@ -15,6 +15,10 @@ def main():
         print(zobj)
         print("Divide by zero is Not Allowed")
         return
+    except Exception as eobj :
+        print(eobj)
+        print("Divide by zero is Not Allowed")
+        return
     
 
     print("Division is : " , Ans)
